@@ -1,0 +1,51 @@
+body {
+    
+}
+
+.user_table{
+    text-align: center;
+    width: 50em;
+    margin: 0em auto;
+}
+
+.form_area {
+    text-align: center;
+    width: 40em;
+    margin: 0em auto;
+}
+
+.bottom_row {
+    margin-bottom: .5em;
+}
+
+.col {
+    margin: .3em;
+}
+
+hr {
+    width: 90%;
+    height: 10px;
+    border: none;
+}
+
+.form_btn {
+    width: 39.2em;
+}
+
+.form_bx {
+    display: flex;
+    justify-content: space-around;
+}
+
+.big_boy {
+    display: flex;
+}
+
+.buttton {
+margin: .2em;
+}
+
+.success_area {
+    text-align: center;
+    margin: 5em auto;
+}

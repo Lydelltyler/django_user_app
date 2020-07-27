@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">  
+    </script>
+    <title> Users w/ templates </title>
+</head>
+
+<body>
+
+
+    <div class="user_table">
+        <h1>All the Users</h1>
+        <div class="big_boy">
+            <!------------ ID ------------>
+            <table class="table table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID</td>
+                    </tr>
+                </thead>
+                {% for user in user_info %}
+                <tr>
+                    <th scope="row">{{user.id}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+            <!------------ Name ------------>
+            <table class="table table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Name</td>
+                    </tr>
+                </thead>
+                {% for user in user_info %}
+                <tr>
+                    <th scope="row">{{user.first_name}} {{user.last_name}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+            <!------------ Email ------------>
+            <table class="table table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Email</td>
+                    </tr>
+                </thead>
+                {% for user in user_info %}
+                <tr>
+                    <th scope="row">{{user.email_address}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+            <!------------ Age ------------>
+            <table class="table table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Age</td>
+                    </tr>
+                </thead>
+                {% for user in user_info %}
+                <tr>
+                    <th scope="row">{{user.age}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+
+    <hr>
+    
+    <div class="form_area">
+
+        <h1> Add a User</h1>
+
+        <form action="/create_user" method="POST">
+            {% csrf_token %}
+            <div class="form-row">
+                <div class="col">
+                    <input type="text" class="form-control" name="fName" placeholder="First name">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" name="lName" placeholder="Last name">
+                </div>
+            </div>
+            <div class="form-row bottom_row">
+                <div class="col">
+                    <input type="text" class="form-control" name="email" placeholder="Email">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" name="age" placeholder="Age">
+                </div>
+            </div>
+            <button type="submit" class=" buttton form_btn btn btn-dark">Add</button>
+            <button formaction="/delete_user" class="buttton form_btn btn btn-dark">Delete</button>
+
+        </form>
+    </div>
+
+</body>
+
+</html>
